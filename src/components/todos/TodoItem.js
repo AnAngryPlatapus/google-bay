@@ -6,7 +6,8 @@ import { connect } from 'inferno-mobx'
 class TodoItem extends Component {
     render({ todos, item }) {
         return <li className="todo">
-            <div className="view">
+            <div className="well">
+                <h4><label>{item.title}</label></h4>
                 <label>{item.text}</label>
                 <button className="destroy" onClick={(e) => todos.remove(item)}/>
             </div>

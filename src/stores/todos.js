@@ -17,14 +17,9 @@ export default class Todos {
         return this.items.map(predicate)
     }
 
-    add(text) {
-        return this.request(`api/todos/add`, { text })
-                   .then(result => {
-                       // Add to list
-                       this.items.push({
-                           _id: result._id,
-                           text: result.text
-                       })
+    add(params) {
+        return this.request(`api/todos/add`, params).then(todos => {
+                       extendObservable(this, todos)
                    })
     }
 

@@ -14,15 +14,24 @@ class Todos extends Component {
     }
 
     render({ todos }) {
-        return <main>
-            <h1>todos</h1>
-            <div className="home">
-                <TodoAdd/>
+        return <div className="container">
+
+        <div className="col-sm-6 col-md-4">
+            <div className="panel panel-default">
+                <div className="home">
+                    <TodoAdd/>
+                </div>
+            </div>
+        </div>
+        <div className="col-sm-6 col-md-4">
+            <div className="well">
                 <section className="main">
                     <TodoItemWrapper todos={todos}/>
                 </section>
             </div>
-        </main>
+        </div>
+
+        </div>
     }
 }
 
